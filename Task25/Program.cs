@@ -32,9 +32,9 @@
 
 class Decision
 {
-    private static int number;
-    private static int pow;
-    private static int result;
+    private static int number = 0;
+    private static int pow = 0;
+    private static int result = 1;
 
     private int Pow()
     {
