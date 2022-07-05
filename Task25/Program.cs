@@ -28,57 +28,58 @@
             }
         }
     }
-}
 
-class Decision
-{
-    private static int number = 0;
-    private static int pow = 0;
-    private static int result = 1;
 
-    private int Pow()
+    class Decision
     {
-        for (int i = 0; i < pow; i++)
+        private static int number = 0;
+        private static int pow = 0;
+        private static int result = 1;
+
+        private int Pow()
         {
-            result = result * number;
+            for (int i = 0; i < pow; i++)
+            {
+                result = result * number;
+            }
+            return result;
         }
-        return result;
-    }
 
-    public void TaskConditions()
-    {
-        Console.Clear();
-        Console.WriteLine("Do you want to get the result of the");
-        Console.WriteLine("first number to the power of the second?");
-        Console.Write("Yes or no? Please enter y/n: ");
-        //Console.WriteLine();
-
-    }
-    public void FillPow()
-    {
-        try
+        public void TaskConditions()
         {
-            Console.Write("Please enter a number: ");
-            string? valueNumber = Console.ReadLine();
-            if (!String.IsNullOrEmpty(valueNumber)) number = Convert.ToInt32(valueNumber.ToString());
+            Console.Clear();
+            Console.WriteLine("Do you want to get the result of the");
+            Console.WriteLine("first number to the power of the second?");
+            Console.Write("Yes or no? Please enter y/n: ");
+            //Console.WriteLine();
 
-            Console.Write("Please enter a degree: ");
-            string? valuePow = Console.ReadLine();
-            if (!String.IsNullOrEmpty(valuePow)) pow = Convert.ToInt32(valuePow.ToString());
         }
-        catch
+        public void FillPow()
         {
-            Console.WriteLine("You must enter a digit!");
-            Console.WriteLine("Erroneous input is taken as zero.");
-        }
-    }
+            try
+            {
+                Console.Write("Please enter a number: ");
+                string? valueNumber = Console.ReadLine();
+                if (!String.IsNullOrEmpty(valueNumber)) number = Convert.ToInt32(valueNumber.ToString());
 
-    public void PrintPow()
-    {
-        result = Pow();
-        Console.WriteLine($"{number} to {pow} degree is {result}");
-        number = 0;
-        pow = 0;
-        result = 1;
+                Console.Write("Please enter a degree: ");
+                string? valuePow = Console.ReadLine();
+                if (!String.IsNullOrEmpty(valuePow)) pow = Convert.ToInt32(valuePow.ToString());
+            }
+            catch
+            {
+                Console.WriteLine("You must enter a digit!");
+                Console.WriteLine("Erroneous input is taken as zero.");
+            }
+        }
+
+        public void PrintPow()
+        {
+            result = Pow();
+            Console.WriteLine($"{number} to {pow} degree is {result}");
+            number = 0;
+            pow = 0;
+            result = 1;
+        }
     }
 }
