@@ -58,7 +58,6 @@ namespace Seminar4
                     temp *= array[i];
                 }
                 array[i] = temp;
-                temp = 1;
             }
             Power = power;
             return array;
