@@ -86,7 +86,7 @@
         public void PrintPow()
         {
             result = Pow();
-            Console.WriteLine($"{number} to {pow} degree is {Math.Round(result, 2)}");
+            Console.WriteLine($"{number} to {pow} degree is {Math.Round(result, 3)}");
             number = 0;
             pow = 0;
             result = 1;
