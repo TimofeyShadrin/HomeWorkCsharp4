@@ -68,7 +68,7 @@ namespace Seminar4
             if (SizeOfArray >= 3)
             {
                 Console.Write($"[{array[0]},");
-                for (int i = 1; i < SizeOfArray - 2; i++)
+                for (int i = 1; i < SizeOfArray - 1; i++)
                 {
                     Console.Write($" {array[i]},");
                 }
