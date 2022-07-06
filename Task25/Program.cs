@@ -34,13 +34,23 @@
     {
         private static int number = 0;
         private static int pow = 0;
-        private static int result = 1;
+        private static double result = 1;
 
-        private int Pow()
+        private double Pow()
         {
-            for (int i = 0; i < pow; i++)
+            if (pow >= 0)
             {
-                result = result * number;
+                for (int i = 0; i < pow; i++)
+                {
+                    result = result * number;
+                }
+            }
+            else if (pow < 0)
+            {
+                for (int i = 0; i < (0 - pow); i++)
+                {
+                    result = result / number;
+                }
             }
             return result;
         }
@@ -76,7 +86,7 @@
         public void PrintPow()
         {
             result = Pow();
-            Console.WriteLine($"{number} to {pow} degree is {result}");
+            Console.WriteLine($"{number} to {pow} degree is {Math.Round(result, 2)}");
             number = 0;
             pow = 0;
             result = 1;
