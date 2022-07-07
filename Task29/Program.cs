@@ -16,7 +16,7 @@ namespace Seminar4
             Resolution resolution = new Resolution();
             resolution.GetRandomArray(5, 10, 1, 41);
 
-            Console.WriteLine($"The computer created an array with a length of {Resolution.SizeOfArray}:");
+            Console.WriteLine($"The computer created an array with a length of {Resolution.sizeOfArray}:");
 
             resolution.PrintGotArray();
             Resolution.Power = 2;
@@ -34,7 +34,7 @@ namespace Seminar4
     class Resolution
     {
         private static int[] array = new int[0];
-        public static int SizeOfArray;
+        public static int sizeOfArray;
         public static int power;
         public static int Power
         {
@@ -56,9 +56,9 @@ namespace Seminar4
         }
         public int[] GetRandomArray(byte minSize, byte maxSize, int MinValue, int MaxValue)
         {
-            SizeOfArray = new Random().Next(minSize, maxSize);
-            Array.Resize(ref array, SizeOfArray);
-            for (int i = 0; i < SizeOfArray; i++)
+            sizeOfArray = new Random().Next(minSize, maxSize);
+            Array.Resize(ref array, sizeOfArray);
+            for (int i = 0; i < sizeOfArray; i++)
             {
                 array[i] = new Random().Next(MinValue, MaxValue);
             }
@@ -68,7 +68,7 @@ namespace Seminar4
         public int[] GetArrayInPower(/*int power*/)
         {
 
-            for (int i = 0; i < SizeOfArray; i++)
+            for (int i = 0; i < sizeOfArray; i++)
             {
                 int temp = 1;
                 //System.Math.Pow(array[i], power);
@@ -84,20 +84,20 @@ namespace Seminar4
 
         public void PrintGotArray()
         {
-            if (SizeOfArray >= 3)
+            if (sizeOfArray >= 3)
             {
                 Console.Write($"[{array[0]},");
-                for (int i = 1; i < SizeOfArray - 1; i++)
+                for (int i = 1; i < sizeOfArray - 1; i++)
                 {
                     Console.Write($" {array[i]},");
                 }
-                Console.WriteLine($" {array[SizeOfArray - 1]}]");
+                Console.WriteLine($" {array[sizeOfArray - 1]}]");
             }
-            else if (SizeOfArray == 2)
+            else if (sizeOfArray == 2)
             {
                 Console.WriteLine($"[{array[0]}, {array[1]}]");
             }
-            else if (SizeOfArray == 1)
+            else if (sizeOfArray == 1)
             {
                 Console.WriteLine($"[{array[0]}]");
             }
