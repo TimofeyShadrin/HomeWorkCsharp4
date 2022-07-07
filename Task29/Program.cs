@@ -19,9 +19,10 @@ namespace Seminar4
             Console.WriteLine($"The computer created an array with a length of {Resolution.SizeOfArray}:");
 
             resolution.PrintGotArray();
-            resolution.GetArrayInPower(2);
+            Resolution.power = 2;
+            resolution.GetArrayInPower();
 
-            Console.WriteLine($"Array of elements in degree {Resolution.Power}");
+            Console.WriteLine($"Array of elements in degree {Resolution.power}");
 
             resolution.PrintGotArray();
             Console.WriteLine();
@@ -34,7 +35,24 @@ namespace Seminar4
     {
         private static int[] array = new int[0];
         public static int SizeOfArray;
-        public static int Power;
+        public static int power
+        {
+            get
+            {
+                return power;
+            }
+            set
+            {
+                if (value > 0)
+                {
+                    power = value;
+                }
+                else
+                {
+                    Console.WriteLine("Input is incorrect!");
+                }
+            }
+        }
         public int[] GetRandomArray(byte minSize, byte maxSize, int MinValue, int MaxValue)
         {
             SizeOfArray = new Random().Next(minSize, maxSize);
@@ -46,7 +64,7 @@ namespace Seminar4
             return array;
         }
 
-        public int[] GetArrayInPower(int power)
+        public int[] GetArrayInPower(/*int power*/)
         {
 
             for (int i = 0; i < SizeOfArray; i++)
@@ -59,7 +77,7 @@ namespace Seminar4
                 }
                 array[i] = temp;
             }
-            Power = power;
+            //Power = power;
             return array;
         }
 
