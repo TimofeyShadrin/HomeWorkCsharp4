@@ -19,7 +19,7 @@ namespace Seminar4
             Console.WriteLine($"The computer created an array with a length of {Resolution.SizeOfArray}:");
 
             resolution.PrintGotArray();
-            Resolution.power = 2;
+            Resolution.Power = 2;
             resolution.GetArrayInPower();
 
             Console.WriteLine($"Array of elements in degree {Resolution.power}");
@@ -35,7 +35,8 @@ namespace Seminar4
     {
         private static int[] array = new int[0];
         public static int SizeOfArray;
-        public static int power
+        public static int power;
+        public static int Power
         {
             get
             {
