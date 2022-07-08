@@ -22,7 +22,7 @@ namespace Seminar4
             Resolution.Power = 2;
             resolution.GetArrayInPower();
 
-            Console.WriteLine($"Array of elements in degree {Resolution.power}");
+            Console.WriteLine($"Array of elements in degree {Resolution.Power}");
 
             resolution.PrintGotArray();
             Console.WriteLine();
@@ -35,7 +35,7 @@ namespace Seminar4
     {
         private static int[] array = new int[0];
         public static int sizeOfArray;
-        public static int power;
+        private static int power;
         public static int Power
         {
             get
